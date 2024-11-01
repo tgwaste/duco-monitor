@@ -33,7 +33,7 @@ let cardColor = config.colors.white,
   borderColor = config.colors.borderColor,
   shadeColor;
 
-let username = localStorage.getItem(DUCO_USERNAME) ?? "siunusdev";
+let username = localStorage.getItem(DUCO_USERNAME) ?? "tgwaste";
 let refreshInterval = localStorage.getItem(REFRESH_INTERVAL) ?? 5;
 
 let balance = 0,
@@ -394,59 +394,6 @@ setMiners = function (miners) {
 
   let tableRows = "";
   let num = 0;
-
-  const minerStats = {};
-
-  for (const i in sortedMiners) {
-    const miner = miners[i];
-    const identifier = miner.identifier;
-
-    if (!minerStats[identifier]) {
-      minerStats[identifier] = {
-        threads: 0,
-        hashrate: 0,
-        accepted: 0,
-        rejected: 0,
-        ping: miner.pg,
-        diff: miner.diff,
-        pool: miner.pool,
-      };
-    }
-
-    // Accumulate stats
-    minerStats[identifier].threads += 1;
-    minerStats[identifier].hashrate += miner.hashrate;
-    minerStats[identifier].accepted += miner.accepted;
-    minerStats[identifier].rejected += miner.rejected;
-  }
-
-  for (const identifier in minerStats) {
-    num++;
-    const miner = minerStats[identifier];
-
-    hashrates += miner.hashrate;
-    accepted += miner.accepted;
-    rejected += miner.rejected;
-
-    const ping =
-      miner.ping > 300
-        ? `<small class="text-danger">${timeFormatted(miner.ping)}</small>`
-        : `<small>${timeFormatted(miner.ping)}</small>`;
-
-    tableRows += `<tr id="${identifier}">
-      <th scope="row">${num}</th>
-      <td><small>${identifier} (${miner.threads})</small></td>
-      <td class="text-success">${miner.accepted}</td>
-      <td class="text-danger">${miner.rejected}</td>
-      <td>${hashrateFormatted(miner.hashrate)}</td>
-      <td>${miner.diff}</td>
-      <td>${ping}</td>
-      <td><small>${miner.pool}</small></td>
-    </tr>`;
-  }
-
-
-/*
   for (i in sortedMiners) {
     num++;
     hashrates += miners[i].hashrate;
@@ -458,18 +405,19 @@ setMiners = function (miners) {
         ? `<small class="text-danger">${timeFormatted(miners[i].pg)}</small>`
         : `<small>${timeFormatted(miners[i].pg)}</small>`;
 
+      //<td><small>${miners[i].software}</small></td>
+      //<td class="text-danger">${miners[i].rejected}</td>
+      //<td><small>${miners[i].pool}</small></td>
+      //<td><small>${miners[i].algorithm}</small></td>
     tableRows += `<tr id="${miners[i].threadid}">
       <th scope="row">${num}</th>
       <td><small>${miners[i].identifier}</small></td>
       <td class="text-success">${miners[i].accepted}</td>
-      <td class="text-danger">${miners[i].rejected}</td>
       <td>${hashrateFormatted(miners[i].hashrate)}</td>
       <td>${miners[i].diff}</td>
       <td>${ping}</td>
-      <td><small>${miners[i].pool}</small></td>
     </tr>`;
   }
-*/
 
   if (tableRows != "") {
     tableMiners.find("tbody").html(tableRows);
