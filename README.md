@@ -1,4 +1,4 @@
-# DUCO Monitor
+# DUCO Monitor (by siunusdev)
 DUCO (Duino-Coin) Miner Monitor (custom layout by tgwaste)
 
 ![duco-monitor Screenshot](
