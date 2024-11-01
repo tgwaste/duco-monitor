@@ -147,16 +147,10 @@
                               tabindex="-1"
                               aria-hidden="true"
                             >
-                              <div
-                                class="modal-dialog modal-dialog-centered"
-                                role="document"
-                              >
+                              <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h5
-                                      class="modal-title"
-                                      id="modalCenterTitle"
-                                    >
+                                    <h5 class="modal-title" id="modalCenterTitle">
                                       Change Username
                                     </h5>
                                     <button
@@ -183,10 +177,7 @@
                                     </div>
                                     <div class="row">
                                       <div class="col">
-                                        <div
-                                          class="alert alert-primary"
-                                          role="alert"
-                                        >
+                                        <div class="alert alert-primary" role="alert">
                                           All retrieved data is stored in your
                                           browser memory.<br />
                                           Sometimes you need to clear browser
@@ -204,10 +195,7 @@
                                     >
                                       Close
                                     </button>
-                                    <button
-                                      type="submit"
-                                      class="btn btn-primary"
-                                    >
+                                    <button type="submit" class="btn btn-primary">
                                       Save changes
                                     </button>
                                   </div>
@@ -229,9 +217,7 @@
                               <div class="modal-content">
                                 <div class="modal-header">
                                   <h5 class="modal-title" id="modalCenterTitle">
-                                    <i
-                                      class="bx bxs-trophy text-primary me-1"
-                                    ></i>
+                                    <i class="bx bxs-trophy text-primary me-1"></i>
                                     Achievements
                                   </h5>
                                   <button
@@ -338,8 +324,7 @@
 
 							</div>
               <div class="row">
-
-                <div class="col-12 col-lg-6 order-2 order-md-3 order-lg-2 mb-4">
+                <div class="col-12 col-lg-6 order-2 order-md-3 order-lg-0 mb-4">
                   <div class="card h-100">
                     <h5 class="card-header">Miners</h5>
                     <div class="table-responsive text-nowrap">
@@ -368,7 +353,7 @@
                   </div>
                 </div>
 
-                <div class="col-12 col-lg-6 order-2 order-md-3 order-lg-2 mb-4">
+                <div class="col-lg-6 col-md-12 col-6 mb-4">
                   <div class="card h-30">
                     <div class="card-header">
                       <h5 class="card-title m-0">Mined Coins</h5>
@@ -429,32 +414,29 @@
                       <div id="incomeChart"></div>
                     </div>
                   </div>
-								</div>
+                  <div class="row">
+                    <div class="col-lg-6 col-md-12 col-6 mb-4">
+                  </div>
+                </div>
 
-                <div class="col-8 col-lg-6 order-2 order-md-3 order-lg-2 mb-4">
-                  <div class="card h-30">
-                    <div class="col-12 mb-4">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
-                            <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
-                              <div class="card-title">
-                                <h5 class="text-nowrap mb-2">DUCO Price</h5>
-                                <span class="badge bg-label-warning rounded-pill" >USD</span>
-                              </div>
-                              <div class="mt-sm-auto">
-                                <small class="text-success text-nowrap fw-semibold" id="price-change-diff">
-                                  <i class="bx bx-chevron-up"></i> $0
-                                </small>
-                                <h5 class="mb-0 fs-5" id="duco-price-usd">
-                                  $ -
-                                </h5>
-                              </div>
-                            </div>
-                            <div id="priceHistory"></div>
-                          </div>
+                <div class="card h-30">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
+                      <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
+                        <div class="card-title">
+                          <h5 class="text-nowrap mb-2">DUCO Price</h5>
+                          <span class="badge bg-label-warning rounded-pill" >USD</span>
+                        </div>
+                        <div class="mt-sm-auto">
+                          <small class="text-success text-nowrap fw-semibold" id="price-change-diff">
+                            <i class="bx bx-chevron-up"></i> $0
+                          </small>
+                          <h5 class="mb-0 fs-5" id="duco-price-usd">
+                            $ -
+                          </h5>
                         </div>
                       </div>
+                      <div id="priceHistory"></div>
                     </div>
                   </div>
                 </div>
@@ -480,9 +462,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="row">
                 <div class="col-md-6 col-lg-6 order-1 mb-4">
                   <div class="card h-100">
                     <div class="card-header d-flex align-items-center justify-content-between">
@@ -499,36 +479,6 @@
                     </div>
                   </div>
                 </div>
-
-<!--
-                <div class="col-md-6 col-lg-6 order-2 mb-4">
-                  <div class="card h-100">
-                    <div
-                      class="card-header d-flex align-items-center justify-content-between"
-                    >
-                      <h5 class="card-title m-0 me-2">Top 10 Richest</h5>
-                    </div>
-                    <div class="card-body px-0">
-                      <div class="table-responsive text-start">
-                        <table
-                          class="table table-borderless text-nowrap"
-                          id="table-top-richest"
-                        >
-                          <thead>
-                            <tr>
-                              <th style="width: 1px">#</th>
-                              <th>Username</th>
-                              <th>Balance</th>
-                              <th>Value</th>
-                            </tr>
-                          </thead>
-                          <tbody></tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
---!>
               </div>
 
               <div

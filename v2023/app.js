@@ -384,7 +384,6 @@ setMiners = function (miners) {
   const acceptedPercentage = $("#accepted-percentage");
   const totalHashrate = $("#total-hashrate");
   const tableMiners = $("#table-miners");
-
   const sortedMiners = miners.sort(sortMinerAsc);
 
   let hashrates = 0,
@@ -444,32 +443,6 @@ setMiners = function (miners) {
       <td><small>${miner.pool}</small></td>
     </tr>`;
   }
-
-
-/*
-  for (i in sortedMiners) {
-    num++;
-    hashrates += miners[i].hashrate;
-    accepted += miners[i].accepted;
-    rejected += miners[i].rejected;
-
-    const ping =
-      miners[i].pg > 300
-        ? `<small class="text-danger">${timeFormatted(miners[i].pg)}</small>`
-        : `<small>${timeFormatted(miners[i].pg)}</small>`;
-
-    tableRows += `<tr id="${miners[i].threadid}">
-      <th scope="row">${num}</th>
-      <td><small>${miners[i].identifier}</small></td>
-      <td class="text-success">${miners[i].accepted}</td>
-      <td class="text-danger">${miners[i].rejected}</td>
-      <td>${hashrateFormatted(miners[i].hashrate)}</td>
-      <td>${miners[i].diff}</td>
-      <td>${ping}</td>
-      <td><small>${miners[i].pool}</small></td>
-    </tr>`;
-  }
-*/
 
   if (tableRows != "") {
     tableMiners.find("tbody").html(tableRows);
@@ -748,7 +721,7 @@ const incomeChartEl = document.querySelector("#incomeChart");
 const incomeChartConfig = {
   series: [],
   chart: {
-    height: 215,
+    height: 120,
     parentHeightOffset: 0,
     parentWidthOffset: 0,
     toolbar: {
