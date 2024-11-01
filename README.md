@@ -2,7 +2,7 @@
 DUCO (Duino-Coin) Miner Monitor
 
 ![duco-monitor Screenshot](
-https://raw.githubusercontent.com/siunus/duco-monitor/main/v2023/screenshot.png)
+https://raw.githubusercontent.com/tgwaste/duco-monitor/main/v2023/screenshot.png)
 
 ## URLs
 - Legacy Version: 
