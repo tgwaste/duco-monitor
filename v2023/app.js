@@ -406,6 +406,7 @@ setMiners = function (miners) {
         hashrate: 0,
         accepted: 0,
         rejected: 0,
+        iot: miner.it.includes(':') ? miner.it.split(':')[1] : miner.it,
         ping: miner.pg,
         diff: miner.diff,
         pool: miner.pool,
@@ -427,6 +428,8 @@ setMiners = function (miners) {
     accepted += miner.accepted;
     rejected += miner.rejected;
 
+    name = identifier
+
     const ping =
       miner.ping > 300
         ? `<small class="text-danger">${timeFormatted(miner.ping)}</small>`
@@ -434,12 +437,13 @@ setMiners = function (miners) {
 
     tableRows += `<tr id="${identifier}">
       <th scope="row">${num}</th>
-      <td><small>${identifier} (${miner.threads})</small></td>
-      <td class="text-success">${miner.accepted}</td>
-      <td class="text-danger">${miner.rejected}</td>
-      <td>${hashrateFormatted(miner.hashrate)}</td>
-      <td>${miner.diff}</td>
-      <td>${ping}</td>
+      <td><small>${name} (${miner.threads})</small></td>
+      <td class="text-success"><small>${miner.accepted}</small></td>
+      <td class="text-danger"><small>${miner.rejected}</small></td>
+      <td><small>${hashrateFormatted(miner.hashrate)}</small></td>
+      <td><small>${miner.diff}</small></td>
+      <td><small>${ping}</small></td>
+      <td><small>${miner.iot}</small></td>
       <td><small>${miner.pool}</small></td>
     </tr>`;
   }
